@@ -13,7 +13,7 @@ import javax.servlet.ServletResponse;
 public class InitParamFilter implements Filter{
 	
 	private FilterConfig filterConfig = null;
-	
+
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 		this.filterConfig = filterConfig;
@@ -23,18 +23,18 @@ public class InitParamFilter implements Filter{
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		// 한글 인코딩 처리
+		//한글 인코딩 처리
 		request.setCharacterEncoding("utf-8");
 		
 		response.setContentType("text/html; charset=utf-8");
 		
 		PrintWriter out = response.getWriter();
 		
-		// 인증 처리
+		//인증 처리
 		String id = request.getParameter("id");
 		String pw = request.getParameter("passwd");
 		
-		// web.xml 필터 설정 참조
+		//web.xml 필터 설정 참조
 		String param1 = filterConfig.getInitParameter("param1");
 		String param2 = filterConfig.getInitParameter("param2");
 		
@@ -44,7 +44,7 @@ public class InitParamFilter implements Filter{
 			out.println("로그인 실패!");
 		}
 		
-		chain.doFilter(request, response);  // 필터 처리
+		chain.doFilter(request, response);  //필터 처리
 	}
 	
 	@Override

@@ -183,14 +183,19 @@ public class MainController extends HttpServlet {
 			String _field = request.getParameter("field");
 			String _kw = request.getParameter("kw");
 			
-			String field = "title"; // 쿼리값이 전달되지 않을 경우 기본값 사용
+			String field = "";
+			String kw = "";
+					
 			if(_field != null) {	// 쿼리값이 있는 경우
 				field = _field;
+			}else {					// 쿼리값이 없는 경우(기본)
+				field = "title";
 			}
 			
-			String kw = "";			// 쿼리값이 전달되지 않을 경우 기본값 사용
 			if(_kw != null) {		// 쿼리값이 있는 경우
 				kw = _kw;
+			}else {
+				kw = "title";		// 쿼리값이 없는 경우(기본)
 			}
 			
 			// 검색 처리 메서드 호출

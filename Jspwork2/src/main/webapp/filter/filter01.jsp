@@ -9,9 +9,9 @@
 <body>
 	<form action="filter01_process.jsp" method="post">
 		<p>
-			이름 <input type="text" name="username">
-				<button type="submit">전송</button>
-		</p>
+		   이름 <input type="text" name="username">
+		       <button type="submit">전송</button>
+        </p>
 	</form>
 </body>
 </html>
